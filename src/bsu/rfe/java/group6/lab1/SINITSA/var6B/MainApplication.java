@@ -8,6 +8,10 @@ public class  MainApplication {
 
         Cheese cheese = new Cheese();
 
+        Coffee сoffeeSaturated = new Coffee("насыщенный");
+        Coffee сoffeeBitter = new Coffee("горький");
+        Coffee сoffeeEastern = new Coffee("восточный");
+
         Apple appleSmall = new Apple("малый");
         Apple appleMiddle = new Apple("средний");
         Apple appleBid = new Apple("большой");
@@ -24,7 +28,9 @@ public class  MainApplication {
             case "Apple":
                 foodList.add(new Apple(parts[1]));
                 break;
-            
+            case "Coffee":
+                foodList.add(new Coffee(parts[1]));
+                break;
             default:
                 System.out.println("Такого продукта нет");
                 }
@@ -50,7 +56,16 @@ public class  MainApplication {
             if (appleBid.equals(foodList.get(i))){
                 appleBigCount++;
             }
-           
+            if (сoffeeSaturated.equals(foodList.get(i))){
+            	сoffeeSaturatedCount++;
+            }
+            if (сoffeeBitter.equals(foodList.get(i))){
+            	сoffeeBitterCount++;
+            }
+            if (сoffeeEastern.equals(foodList.get(i))){
+            	сoffeeEasternCount++;
+            }
+            
         }
 
         for (Food item : foodList) {
@@ -63,7 +78,10 @@ public class  MainApplication {
         if (appleBigCount > 0)    System.out.println("Мы съели Яблоко размером БОЛЬШОЙ в количестве " + appleBigCount );
         if (appleMiddleCount > 0) System.out.println("Мы съели Яблоко размером СРЕДНИЙ в количестве " + appleMiddleCount );
         if (appleSmallCount > 0)  System.out.println("Мы съели Яблоко размером МАЛЫЙ в количестве " + appleSmallCount );
-       
+        if (сoffeeSaturatedCount > 0)   System.out.println("Мы выпили Кофе аромат НАСЫЩЕННЫЙ в количестве " + сoffeeSaturatedCount );
+        if (сoffeeBitterCount > 0)   System.out.println("Мы выпили Кофе аромат ГОРЬКИЙ в количестве " + сoffeeBitterCount );
+        if (сoffeeEasternCount > 0)   System.out.println("Мы выпили Кофе аромат ВОСТОЧНЫЙ в количестве " + сoffeeEasternCount );
+
         System.out.println("Всего хорошего!");
         }
     }
